@@ -1,4 +1,4 @@
-// vai começar os testes
+// vai começar os testes.
 window.onload = function onload() { };
 
 function createProductImageElement(imageSource) {
