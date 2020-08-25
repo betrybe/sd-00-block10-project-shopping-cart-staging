@@ -1,11 +1,10 @@
-// vai começar os testes.
+// vai começar os testes..
 window.onload = function onload() { };
 
 function createProductImageElement(imageSource) {
   const img = document.createElement('img');
   img.className = 'item__image';
   img.src = imageSource;
-  console.log(img)
   return img;
 }
 
