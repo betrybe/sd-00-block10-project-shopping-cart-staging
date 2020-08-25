@@ -1,3 +1,5 @@
+// Jonh doe vai começar o projetasso
+
 window.onload = function onload() { };
 
 function createProductImageElement(imageSource) {
