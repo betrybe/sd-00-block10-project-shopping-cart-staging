@@ -1,7 +1,3 @@
-// Jonh doe vai começar o projetasso
-
-window.onload = function onload() { };
-
 function createProductImageElement(imageSource) {
   const img = document.createElement('img');
   img.className = 'item__image';
@@ -43,3 +39,9 @@ function createCartItemElement({ sku, name, salePrice }) {
   li.addEventListener('click', cartItemClickListener);
   return li;
 }
+
+window.onload = async function onload() {
+  const data = (await fetchPc()).map(serialize).map(createProductItemElement);
+  const itemsContainer = document.querySelector('.items');
+  data.forEach((item) => itemsContainer.appendChild(item));
+};
