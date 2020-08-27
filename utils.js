@@ -8,5 +8,5 @@ function serialize({ id, title, thumbnail }) {
   return { sku: id, name: title, image: thumbnail };
 }
 
-fetchPc()
-serialize()
+fetchPc();
+serialize();
