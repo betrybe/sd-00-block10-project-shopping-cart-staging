@@ -13,7 +13,7 @@ async function soma(number, reset) {
 }
 
 
-// LOCALSTORAGE FUNCTIONS
+// LOCALSTORAGE FUNCTIONsS
 function updateLocalStorage(elementId) {
   const elementToLocal = document.querySelector(elementId).innerHTML;
   localStorage.setItem(elementId, elementToLocal);
