@@ -43,5 +43,5 @@ function createCartItemElement({ sku, name, salePrice }) {
 window.onload = async function onload() {
   const data = (await fetchPc()).map(serialize).map(createProductItemElement);
   const itemsContainer = document.querySelector('.items');
-  data.forEach((item) => itemsContainer.appendChild(item));
+  data.forEach(item => itemsContainer.appendChild(item));
 };
