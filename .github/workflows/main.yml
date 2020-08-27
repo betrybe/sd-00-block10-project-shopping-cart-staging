@@ -4,7 +4,7 @@ on:
 
 jobs:
   evaluator_job:
-    runs-on: ubuntu-18.04
+    runs-on: selfhosted
     name: Evaluator job
     steps:
       - name: Wait for build to succeed
