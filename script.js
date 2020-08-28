@@ -39,7 +39,7 @@ function getSkuFromProductItem(item) {
 }
 
 function cartItemClickListener(event) {
-  return undefined
+  return undefined;
 }
 
 function createCartItemElement({ sku, name, salePrice }) {
