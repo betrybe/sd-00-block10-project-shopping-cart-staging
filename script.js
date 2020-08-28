@@ -55,4 +55,3 @@ window.onload = async function onload() {
   const itemsContainer = document.querySelector('.items');
   data.forEach(item => itemsContainer.appendChild(item));
 };
-
