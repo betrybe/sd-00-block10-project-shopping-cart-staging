@@ -23,11 +23,20 @@ function createProductImageElement(imageSource) {
   return img;
 }
 
+function save(){
+
+  const cartItems = document.querySelectorAll('.cart__item')
+  const items =[]
+  cartItems.forEach(item => items.push(item.innerHTML))
+  localStorage.setItem('cart_item',JSON.stringify(items))
+}
+
 async function addtoCart(itemId) {
   const item = await fetchItem(itemId);
   const cartItem = createCartItemElement(serialize(item));
   const cart = document.querySelector('.cart__items');
   cart.appendChild(cartItem);
+  save()
 }
 
 function createCustomElement(element, className, innerText) {
@@ -58,6 +67,10 @@ function getSkuFromProductItem(item) {
 async function cartItemClickListener(event) {
   event.target.remove();
 }
+function clearCart(){
+  const cartItems = document.querySelectorAll('.cart__item')
+  cartItems.forEach(item => item.remove())
+}
 
 function createCartItemElement({ sku, name, salePrice }) {
   const li = document.createElement('li');
@@ -67,7 +80,24 @@ function createCartItemElement({ sku, name, salePrice }) {
   return li;
 }
 
+function createItemCart(text) {
+  const li = document.createElement('li');
+  li.className = 'cart__item';
+  li.innerHTML = text;
+  li.addEventListener('click', cartItemClickListener);
+  const cartItems = document.querySelector('.cart__items')
+  cartItems.appendChild(li)
+
+}
+
 window.onload = async function onload() {
+  document.querySelector('.empty-cart').addEventListener('click',clearCart)
+  const items = JSON.parse(localStorage.getItem('cart_item'))
+  if (items) {
+    items.forEach(createItemCart)
+  }
+
+
   const data = (await fetchPc()).map(serialize).map(createProductItemElement);
   const itemsContainer = document.querySelector('.items');
   data.forEach(item => itemsContainer.appendChild(item));
