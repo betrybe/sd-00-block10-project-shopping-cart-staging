@@ -1,0 +1,15 @@
+{
+  "name": "simara-technical-test-2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/betrybe/simara-technical-test-2.git",
+  "author": "Simara Conceição <contato@simaraconceicao.com>",
+  "license": "MIT",
+  "dependencies": {
+    "babel": "^6.23.0"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-async-to-generator": "^7.12.1",
+    "@babel/polyfill": "^7.12.1"
+  }
+}
